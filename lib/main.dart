@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
-void main(List<String> args) => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({key}) : super(key: key);
+  MyApp({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         backgroundColor: Colors.white,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
