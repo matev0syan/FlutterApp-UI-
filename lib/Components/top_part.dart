@@ -23,9 +23,9 @@ class TopPart extends StatelessWidget {
         ),
       ),
       width: double.infinity,
-      height: 400,
+      height: 430,
       child: Column(children: [
-        DropDownMenu(),
+        Dropdownmenu(),
         TextOne(),
         TextTwo(),
         TextThree(),

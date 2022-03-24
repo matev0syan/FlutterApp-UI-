@@ -1,27 +1,54 @@
 import 'package:flutter/material.dart';
 
-class DropDownMenu extends StatefulWidget {
-  const DropDownMenu({Key? key}) : super(key: key);
+class Dropdownmenu extends StatefulWidget {
+  const Dropdownmenu({Key? key}) : super(key: key);
 
   @override
-  State<DropDownMenu> createState() => _DropDownMenuState();
+  State<Dropdownmenu> createState() => _MyStatefulWidgetState();
 }
 
-class _DropDownMenuState extends State<DropDownMenu> {
+class _MyStatefulWidgetState extends State<Dropdownmenu> {
+  String dropdownValue = 'Бизнес-центр Гулливер';
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-          borderRadius: BorderRadius.circular(20),
-        ),
+            borderRadius: BorderRadius.circular(20),
+            color: Color.fromARGB(255, 255, 255, 255)),
         width: double.infinity,
-        height: 50,
-        child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text('  Бизнес-центр Гулливер')),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: DropdownButton<String>(
+            underline: Container(
+              height: 0,
+            ),
+            borderRadius: BorderRadius.circular(20),
+            isExpanded: true,
+            value: dropdownValue,
+            icon: const Icon(Icons.keyboard_arrow_down_rounded),
+            elevation: 16,
+            style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue!;
+              });
+            },
+            items: <String>[
+              'Все объекты',
+              'Бизнес-центр Гулливер',
+              'Бизнес-центр Параллель',
+              'Офис на Баррикадной'
+            ].map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+          ),
+        ),
       ),
     );
   }
@@ -154,19 +181,30 @@ class TopButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(103, 3, 94, 110),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        width: double.infinity,
-        height: 45,
-        child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '   Подрдбная аналитика',
-              style: TextStyle(color: Colors.white),
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () => null,
+        child: Container(
+            decoration: BoxDecoration(
+                color: Color.fromARGB(103, 3, 94, 110),
+                borderRadius: BorderRadius.circular(25)),
+            width: double.infinity,
+            height: 45,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Подрдбная аналитика',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Icon(
+                    Icons.arrow_right_alt,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             )),
       ),
     );
