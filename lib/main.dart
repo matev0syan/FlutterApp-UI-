@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 import 'analitic.dart';
+// import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
-void main() => runApp(MyApp());
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   MyApp({key}) : super(key: key);

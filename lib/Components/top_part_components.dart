@@ -13,7 +13,7 @@ class _MyStatefulWidgetState extends State<Dropdownmenu> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
@@ -60,7 +60,7 @@ class TextOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.fromLTRB(25, 25, 25, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -100,7 +100,7 @@ class TextTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.fromLTRB(25, 30, 25, 5),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
@@ -118,7 +118,7 @@ class TextThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
       child: Align(
           alignment: Alignment.centerLeft,
           child: RichText(
@@ -144,7 +144,7 @@ class TextFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
       child: Row(
         children: [
           Text(
@@ -181,31 +181,34 @@ class TopButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(10, 60, 10, 10),
       child: InkWell(
         onTap: () => null,
-        child: Container(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(103, 3, 94, 110),
-                borderRadius: BorderRadius.circular(25)),
-            width: double.infinity,
-            height: 45,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Подрдбная аналитика',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.arrow_right_alt,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            )),
+        child: Opacity(
+          opacity: 0.8,
+          child: Container(
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(103, 3, 94, 110),
+                  borderRadius: BorderRadius.circular(25)),
+              width: double.infinity,
+              height: 45,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Подрдбная аналитика',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Icon(
+                      Icons.arrow_right_alt,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              )),
+        ),
       ),
     );
   }

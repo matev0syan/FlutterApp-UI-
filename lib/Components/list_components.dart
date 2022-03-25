@@ -16,10 +16,10 @@ class ListText extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
             Container(
-              width: 80,
+              width: 90,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Color.fromARGB(123, 158, 158, 158),
+                color: Color.fromARGB(66, 190, 187, 187),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -27,8 +27,8 @@ class ListText extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Icon(
-                      Icons.poll,
-                      color: Colors.black,
+                      Icons.pie_chart_rounded,
+                      color: Color.fromARGB(155, 97, 95, 95),
                     ),
                     Icon(
                       Icons.menu,
@@ -68,26 +68,74 @@ class ListBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.fromLTRB(20, 15, 30, 0),
       child: Container(
         height: 50,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               width: 50,
               height: 35,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Color.fromARGB(54, 107, 102, 102),
+                color: Color.fromARGB(66, 187, 187, 190),
               ),
               child: Center(
                 child: Text('Все'),
               ),
             ),
-            Text('Доход'),
-            Text('Долг'),
-            Text('Ожидаемые'),
+            Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 7,
+                    height: 7,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.green),
+                  ),
+                ),
+                Text('Доход'),
+              ],
+            )),
+            Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 7,
+                    height: 7,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.red),
+                  ),
+                ),
+                Text('Долг'),
+              ],
+            )),
+            Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 7,
+                    height: 7,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.orange),
+                  ),
+                ),
+                Text('Ожидаемые'),
+              ],
+            )),
           ],
         ),
       ),

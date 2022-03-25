@@ -33,7 +33,7 @@ class BottomNavBar extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.poll,
+                Icons.pie_chart_rounded,
               ),
               label: 'Аналитика',
             ),

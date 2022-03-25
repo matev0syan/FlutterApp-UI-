@@ -18,8 +18,8 @@ class TopPart extends StatelessWidget {
           end: Alignment.centerRight,
         ),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15),
+          bottomLeft: Radius.circular(18),
+          bottomRight: Radius.circular(18),
         ),
       ),
       width: double.infinity,
