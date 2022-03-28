@@ -1,8 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp1/Components/list_items.dart';
-
-import 'list_components.dart';
+import 'list_part_components/list_bar.dart';
+import 'list_part_components/list_item1.dart';
+import 'list_part_components/list_item2.dart';
+import 'list_part_components/list_text_row1.dart';
+import 'list_part_components/list_text_row2.dart';
 
 class ListPart extends StatelessWidget {
   const ListPart({Key? key}) : super(key: key);
@@ -10,9 +12,9 @@ class ListPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        ListText(),
-        ListText2(),
+      children: const [
+        ListTextRow1(),
+        ListTextRow2(),
         ListBar(),
         ListItem1(),
         ListItem2(),

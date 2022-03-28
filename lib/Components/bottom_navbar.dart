@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             blurRadius: 15.0,
@@ -24,8 +29,8 @@ class BottomNavBar extends StatelessWidget {
           selectedFontSize: 12,
           type: BottomNavigationBarType.fixed,
           unselectedItemColor: Colors.grey,
-          selectedItemColor: Color.fromARGB(255, 0, 0, 0),
-          items: [
+          selectedItemColor: const Color.fromARGB(255, 0, 0, 0),
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Главная',
